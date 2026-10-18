@@ -1,6 +1,5 @@
-package com.robertadebenedictis.peakwise.ui.theme
+package com.robertadebenedictis.peakwise.core.designsystem.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

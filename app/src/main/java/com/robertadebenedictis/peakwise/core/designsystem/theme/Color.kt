@@ -1,4 +1,4 @@
-package com.robertadebenedictis.peakwise.ui.theme
+package com.robertadebenedictis.peakwise.core.designsystem.theme
 
 import androidx.compose.ui.graphics.Color
 
