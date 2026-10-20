@@ -1,5 +1,6 @@
 package com.robertadebenedictis.peakwise.core.di
 
+import com.robertadebenedictis.peakwise.feature.explore.data.remote.GeocodingApi
 import com.robertadebenedictis.peakwise.feature.explore.data.repository.LocationSearchRepositoryImpl
 import com.robertadebenedictis.peakwise.feature.explore.domain.repository.LocationSearchRepository
 import dagger.Module
@@ -14,7 +15,7 @@ object Module {
 
     @Provides
     @Singleton
-    fun provideLocationSearchRepository(): LocationSearchRepository {
-        return LocationSearchRepositoryImpl()
+    fun provideLocationSearchRepository(geocodingApi: GeocodingApi): LocationSearchRepository {
+        return LocationSearchRepositoryImpl(geocodingApi)
     }
 }
