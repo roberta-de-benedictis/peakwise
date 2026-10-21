@@ -1,4 +1,4 @@
-package com.robertadebenedictis.peakwise.feature.explore.data.remote
+package com.robertadebenedictis.peakwise.feature.explore.data.remote.api
 
 import com.robertadebenedictis.peakwise.feature.explore.data.remote.model.GeocodingResponseDto
 import retrofit2.http.GET
@@ -11,5 +11,5 @@ interface GeocodingApi {
         @Query("count") count: Int = 10,
         @Query("language") language: String = "en",
         @Query("format") format: String = "json"
-    ): List<GeocodingResponseDto>
+    ): GeocodingResponseDto
 }

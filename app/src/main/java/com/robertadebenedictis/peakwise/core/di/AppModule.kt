@@ -1,6 +1,6 @@
 package com.robertadebenedictis.peakwise.core.di
 
-import com.robertadebenedictis.peakwise.feature.explore.data.remote.GeocodingApi
+import com.robertadebenedictis.peakwise.feature.explore.data.remote.api.GeocodingApi
 import com.robertadebenedictis.peakwise.feature.explore.data.repository.LocationSearchRepositoryImpl
 import com.robertadebenedictis.peakwise.feature.explore.domain.repository.LocationSearchRepository
 import dagger.Module

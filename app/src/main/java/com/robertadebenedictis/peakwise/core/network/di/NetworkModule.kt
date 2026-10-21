@@ -1,7 +1,7 @@
 package com.robertadebenedictis.peakwise.core.network.di
 
 import com.robertadebenedictis.peakwise.core.network.NetworkConstants
-import com.robertadebenedictis.peakwise.feature.explore.data.remote.GeocodingApi
+import com.robertadebenedictis.peakwise.feature.explore.data.remote.api.GeocodingApi
 import com.robertadebenedictis.peakwise.feature.weather.data.remote.WeatherApi
 import dagger.Module
 import dagger.Provides
