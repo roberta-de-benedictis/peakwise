@@ -16,48 +16,48 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
-
     @Provides
     @Singleton
-    fun provideOkHttpClient(): OkHttpClient {
-        return OkHttpClient.Builder()
-            .addInterceptor(HttpLoggingInterceptor().apply {
-                level = HttpLoggingInterceptor.Level.BODY
-            })
-            .build()
-    }
+    fun provideOkHttpClient(): OkHttpClient =
+        OkHttpClient
+            .Builder()
+            .addInterceptor(
+                HttpLoggingInterceptor().apply {
+                    level = HttpLoggingInterceptor.Level.BODY
+                },
+            ).build()
 
     @GeocodingRetrofit
     @Provides
     @Singleton
-    fun provideGeocodingRetrofit(okHttpClient: OkHttpClient): Retrofit {
-        return Retrofit.Builder()
+    fun provideGeocodingRetrofit(okHttpClient: OkHttpClient): Retrofit =
+        Retrofit
+            .Builder()
             .baseUrl(NetworkConstants.GEOCODING_BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-    }
 
     @ForecastRetrofit
     @Provides
     @Singleton
-    fun provideForecastRetrofit(okHttpClient: OkHttpClient): Retrofit {
-        return Retrofit.Builder()
+    fun provideForecastRetrofit(okHttpClient: OkHttpClient): Retrofit =
+        Retrofit
+            .Builder()
             .baseUrl(NetworkConstants.FORECAST_BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-    }
 
     @Provides
     @Singleton
-    fun provideGeocodingApi(@GeocodingRetrofit retrofit: Retrofit): GeocodingApi {
-        return retrofit.create(GeocodingApi::class.java)
-    }
+    fun provideGeocodingApi(
+        @GeocodingRetrofit retrofit: Retrofit,
+    ): GeocodingApi = retrofit.create(GeocodingApi::class.java)
 
     @Provides
     @Singleton
-    fun provideWeatherApi(@ForecastRetrofit retrofit: Retrofit): WeatherApi {
-        return retrofit.create(WeatherApi::class.java)
-    }
+    fun provideWeatherApi(
+        @ForecastRetrofit retrofit: Retrofit,
+    ): WeatherApi = retrofit.create(WeatherApi::class.java)
 }

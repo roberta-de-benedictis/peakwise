@@ -4,5 +4,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class GeocodingResponseDto(
-    val results: List<LocationDto>? = null
+    val results: List<LocationDto>? = null,
 )

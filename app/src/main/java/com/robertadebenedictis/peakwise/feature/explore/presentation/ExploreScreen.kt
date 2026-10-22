@@ -6,5 +6,4 @@ import androidx.compose.ui.tooling.preview.Preview
 @Preview(showBackground = true)
 @Composable
 fun ExploreScreen() {
-
 }

@@ -11,11 +11,8 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object Module {
-
+object AppModule {
     @Provides
     @Singleton
-    fun provideLocationSearchRepository(geocodingApi: GeocodingApi): LocationSearchRepository {
-        return LocationSearchRepositoryImpl(geocodingApi)
-    }
+    fun provideLocationSearchRepository(geocodingApi: GeocodingApi): LocationSearchRepository = LocationSearchRepositoryImpl(geocodingApi)
 }

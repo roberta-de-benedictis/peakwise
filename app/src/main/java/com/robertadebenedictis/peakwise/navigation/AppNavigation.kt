@@ -13,10 +13,11 @@ fun AppNavigation() {
     NavDisplay(
         backStack = backStack,
         onBack = { backStack.removeLastOrNull() },
-        entryProvider = entryProvider {
-            entry<ExploreRoute> {
-                ExploreScreen()
-            }
-        }
+        entryProvider =
+            entryProvider {
+                entry<ExploreRoute> {
+                    ExploreScreen()
+                }
+            },
     )
 }

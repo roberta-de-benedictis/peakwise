@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
     alias(libs.plugins.room)
+    alias(libs.plugins.ktlint)
 }
 
 android {
@@ -37,6 +38,10 @@ android {
     buildFeatures {
         compose = true
     }
+}
+
+ktlint {
+    android.set(true)
 }
 
 room {
@@ -83,4 +88,6 @@ dependencies {
     // Serialization & Image Loading
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.coil.compose)
+
+    ktlintRuleset(libs.compose.rules.ktlint)
 }

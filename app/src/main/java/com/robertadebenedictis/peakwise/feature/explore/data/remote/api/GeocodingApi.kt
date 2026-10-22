@@ -10,6 +10,6 @@ interface GeocodingApi {
         @Query("name") name: String,
         @Query("count") count: Int = 10,
         @Query("language") language: String = "en",
-        @Query("format") format: String = "json"
+        @Query("format") format: String = "json",
     ): GeocodingResponseDto
 }

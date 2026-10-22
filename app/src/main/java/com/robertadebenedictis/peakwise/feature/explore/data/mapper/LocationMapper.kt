@@ -11,5 +11,5 @@ fun LocationDto.toDomainModel(): Location =
         longitude = longitude ?: 0.0,
         elevation = elevation,
         country = country,
-        region = admin1
+        region = admin1,
     )
